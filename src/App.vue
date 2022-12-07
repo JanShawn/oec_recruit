@@ -1,20 +1,13 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import HelloWorld from "./components/HelloWorld.vue";
+import TheWelcome from "./components/TheWelcome.vue";
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="container m-10 mx-auto rounded-xl border bg-gray-200 p-8 shadow">
+    <p class="mb-5 text-3xl font-bold text-gray-700">Welcome!</p>
+    <p class="text-lg text-gray-500">Vue and Tailwind CSS in action</p>
+  </div>
 </template>
 
 <style scoped>
