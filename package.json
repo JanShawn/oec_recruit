@@ -10,7 +10,8 @@
     "pinia": "^2.0.16",
     "postcss-import": "^15.0.1",
     "postcss-nesting": "^10.2.0",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vue-animejs": "^2.1.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.1",
