@@ -10,8 +10,17 @@ module.exports = {
       colors: {
         primary: '',
         secondary: ''
-      }
-    }
+      },
+      fontFamily: {
+        sans: [
+          '"Inter"',
+          '"Helvetica"',
+          'Arial',
+          '"Noto Sans"',
+          'sans-serif',
+        ],
+      },
+    },
   },
   plugins: [],
 }

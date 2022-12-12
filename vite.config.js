@@ -13,6 +13,6 @@ export default defineConfig({
   },
   base: "/oec_recruit/",
   server: {
-    host: "10.16.200.248",
+    host: "172.20.10.14",
   },
 });

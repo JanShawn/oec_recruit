@@ -104,8 +104,6 @@ function animateShape(el) {
   }
 }
 onMounted(() => {
-  //DOM元素將在初始渲染之後分配給ref
-
   var layeredAnimationEl = document.querySelector(".layered-animations");
   var shapeEls = layeredAnimationEl.querySelectorAll(".shape");
   var triangleEl = layeredAnimationEl.querySelector("polygon");
@@ -119,132 +117,76 @@ onMounted(() => {
 
 <template>
   <header>
-    <div class="container mx-auto">
-      <div>12</div>
+    <div class="container mx-auto px-4">
+      <div class="content flex justify-center items-center">
+        <div class="text">
+          <img class="logo" src="./assets/images/logo.png" alt="">
+          <div class="main">
+            <div class="title">服務發展設計中心</div>
+            <div class="title">2023實習計畫</div>
+            <div class="sub-text">CHT Design Center Internship program 2023</div>
+            <div class="sub-title">一起成為未來造夢師</div>
+            <a href="https://forms.gle/FQtiLn7qntmVTHuQA" target="_blank" class="btn apply">立即投遞</a>
+          </div>
+        </div>
+        <img class="person" src="./assets/images/header_person.png" />
+      </div>
+
     </div>
     <div class="haloBallBg haloBall_1"></div>
     <div class="haloBallBg haloBall_2"></div>
+    <!-- animation block -->
     <div class="animation-wrapper">
       <div class="layered-animations">
         <svg class="large shape" viewBox="0 0 96 96">
           <defs>
-            <linearGradient
-              id="circleGradient"
-              x1="0%"
-              x2="100%"
-              y1="20%"
-              y2="80%"
-            >
+            <linearGradient id="circleGradient" x1="0%" x2="100%" y1="20%" y2="80%">
               <stop stop-color="#373734" offset="0%" />
               <stop stop-color="#242423" offset="50%" />
               <stop stop-color="#0D0D0C" offset="100%" />
             </linearGradient>
           </defs>
-          <circle
-            cx="48"
-            cy="48"
-            r="28"
-            fill-rule="evenodd"
-            stroke-linecap="square"
-            fill="url(#circleGradient)"
-          />
+          <circle cx="48" cy="48" r="28" fill-rule="evenodd" stroke-linecap="square" fill="url(#circleGradient)" />
         </svg>
         <svg class="small shape color-red" viewBox="0 0 96 96">
-          <polygon
-            fill-rule="evenodd"
-            points="48 17.28 86.4 80.11584 9.6 80.11584"
-            stroke-linecap="square"
-          />
+          <polygon fill-rule="evenodd" points="48 17.28 86.4 80.11584 9.6 80.11584" stroke-linecap="square" />
         </svg>
         <svg class="large shape" viewBox="0 0 96 96">
           <defs>
-            <linearGradient
-              id="triangleGradient"
-              x1="0%"
-              x2="100%"
-              y1="20%"
-              y2="80%"
-            >
+            <linearGradient id="triangleGradient" x1="0%" x2="100%" y1="20%" y2="80%">
               <stop stop-color="#373734" offset="0%" />
               <stop stop-color="#242423" offset="50%" />
               <stop stop-color="#0D0D0C" offset="100%" />
             </linearGradient>
           </defs>
-          <polygon
-            fill-rule="evenodd"
-            points="48 17.28 86.4 80.11584 9.6 80.11584"
-            stroke-linecap="square"
-            fill="url(#triangleGradient)"
-          />
+          <polygon fill-rule="evenodd" points="48 17.28 86.4 80.11584 9.6 80.11584" stroke-linecap="square"
+            fill="url(#triangleGradient)" />
         </svg>
         <svg class="x-small shape" viewBox="0 0 96 96">
-          <polygon
-            fill-rule="evenodd"
-            points="48 17.28 86.4 80.11584 9.6 80.11584"
-            stroke-linecap="square"
-          />
+          <polygon fill-rule="evenodd" points="48 17.28 86.4 80.11584 9.6 80.11584" stroke-linecap="square" />
         </svg>
         <svg class="x-small shape" viewBox="0 0 96 96">
-          <rect
-            width="48"
-            height="48"
-            x="24"
-            y="24"
-            fill-rule="evenodd"
-            stroke-linecap="square"
-          />
+          <rect width="48" height="48" x="24" y="24" fill-rule="evenodd" stroke-linecap="square" />
         </svg>
         <svg class="small shape color-red" viewBox="0 0 96 96">
-          <rect
-            width="48"
-            height="48"
-            x="24"
-            y="24"
-            fill-rule="evenodd"
-            stroke-linecap="square"
-          />
+          <rect width="48" height="48" x="24" y="24" fill-rule="evenodd" stroke-linecap="square" />
         </svg>
         <svg class="large shape" viewBox="0 0 96 96">
           <defs>
-            <linearGradient
-              id="rectGradient"
-              x1="0%"
-              x2="100%"
-              y1="20%"
-              y2="80%"
-            >
+            <linearGradient id="rectGradient" x1="0%" x2="100%" y1="20%" y2="80%">
               <stop stop-color="#373734" offset="0%" />
               <stop stop-color="#242423" offset="50%" />
               <stop stop-color="#0D0D0C" offset="100%" />
             </linearGradient>
           </defs>
-          <rect
-            width="48"
-            height="48"
-            x="24"
-            y="24"
-            fill-rule="evenodd"
-            stroke-linecap="square"
-            fill="url(#rectGradient)"
-          />
+          <rect width="48" height="48" x="24" y="24" fill-rule="evenodd" stroke-linecap="square"
+            fill="url(#rectGradient)" />
         </svg>
         <svg class="small shape color-red" viewBox="0 0 96 96">
-          <circle
-            cx="48"
-            cy="48"
-            r="32"
-            fill-rule="evenodd"
-            stroke-linecap="square"
-          />
+          <circle cx="48" cy="48" r="32" fill-rule="evenodd" stroke-linecap="square" />
         </svg>
         <svg class="x-small shape" viewBox="0 0 96 96">
-          <circle
-            cx="48"
-            cy="48"
-            r="32"
-            fill-rule="evenodd"
-            stroke-linecap="square"
-          />
+          <circle cx="48" cy="48" r="32" fill-rule="evenodd" stroke-linecap="square" />
         </svg>
       </div>
     </div>
@@ -254,53 +196,100 @@ onMounted(() => {
 <style scoped lang="scss">
 header {
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   position: relative;
+  color: #fff;
+
   .haloBallBg {
-    background: radial-gradient(
-      95.6% 95.6% at 31.2% 44.8%,
-      rgba(64, 175, 175, 0.5) 0%,
-      rgba(64, 175, 175, 0) 98.34%
-    );
+    background: radial-gradient(95.6% 95.6% at 31.2% 44.8%,
+        rgba(64, 175, 175, 0.5) 0%,
+        rgba(64, 175, 175, 0) 98.34%);
     filter: blur(100px);
   }
+
   .haloBall_1 {
     position: absolute;
-    // width: 662px;
-    // height: 662px;
-    // left: -242px;
-    // top: -331px;
+    width: 662px;
+    height: 662px;
+    left: -242px;
+    top: -331px;
   }
+
   .haloBall_2 {
     position: absolute;
-    // width: 414px;
-    // height: 414px;
-    // right: -242px;
-    // top: 190px;
+    width: 414px;
+    height: 414px;
+    right: -242px;
+    top: 190px;
   }
+
+  .content {
+    height: 80vh;
+
+    // border: 1px solid red;
+    .main {
+      min-width: 540px;
+      margin-left: 75px;
+    }
+
+    .logo {
+      margin-bottom: 36px;
+    }
+
+    .title {
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .sub-text {
+      color: #BDBBB7;
+      font-size: 24px;
+      margin-top: 8px;
+    }
+
+    .sub-title {
+      color: #30FFFF;
+      margin-top: 68px;
+    }
+
+    .apply {
+      margin-top: 36px;
+    }
+
+    .person {
+      max-width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+  }
+
   .animation-wrapper {
-   
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border:2px solid red;
+
+    width: 60%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // border:2px solid red;
     // left:50%;
     // transform: translateX(-25%);
+
   }
+
   .layered-animations {
+    // overflow: hidden;
     position: absolute;
     // top: 50%;
-    right:0;
-    top:0;
+    left: 35%;
+    top: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 60%;
-    height: 550px;
-    // margin: -275px 0 0 -550px;
+    height: 50vh;
+    z-index: -1;
 
-    border: 1px solid #fff;
+    // margin: -275px 0 0 -550px;
+    // border: 1px solid #fff;
     .shape {
       position: absolute;
       top: 50%;
@@ -313,17 +302,12 @@ header {
       fill: url(#shapesGradient);
     }
   }
-  @media (min-width: 740px) {
-    .layered-animations .shape {
-      stroke-width: 0.5px;
-    }
-  }
 
   .layered-animations .small.shape {
     width: 64px;
     height: 64px;
     margin-top: -32px;
-    stroke: red;
+    // stroke: red;
     fill: #fff;
   }
 
@@ -331,14 +315,33 @@ header {
     width: 32px;
     height: 32px;
     margin-top: -16px;
-    stroke: red;
+    // stroke: red;
     fill: #30ffff;
   }
 
-  @media (max-width:569px) {
-    .layered-animations{
+  @media (max-width:992px) {
+    .animation-wrapper {
       width: 80%;
     }
+
+    .layered-animations {
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
   }
+
+  @media (max-width:569px) {
+
+    .layered-animations {
+      width: 100%;
+    }
+  }
+
+  // @media (min-width: 740px) {
+  //   .layered-animations .shape {
+  //     stroke-width: 0.5px;
+  //   }
+  // }
 }
 </style>
