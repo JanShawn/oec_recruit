@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from "node:url";
-
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
@@ -13,6 +12,13 @@ export default defineConfig({
   },
   base: "/oec_recruit/",
   server: {
-    host: "172.20.10.14",
+    host: "10.16.200.248",
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/styles/_variables.scss";`,
+      },
+    },
   },
 });
