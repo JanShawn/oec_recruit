@@ -36,6 +36,8 @@ const reasonsList = reactive({
 let isMobile = ref(false);
 let windowWidth = ref(window.innerWidth);
 let trianglePoints = ref(null);
+const decElRef = ref(null); //環境小人圖Dom
+
 function fitElementToParent(el, padding) {
   var timeout = null;
   function resize() {
@@ -152,6 +154,18 @@ const getImageUrl = (name) => {
 };
 
 onMounted(() => {
+  window.addEventListener("scroll", (e) => {
+    if (!isMobile.value) {
+      nextTick(() => {
+        let decElTop = decElRef.value.getBoundingClientRect().top;
+        if (window.scrollY - 650 < decElTop) {
+          decElRef.value.classList.remove("show");
+        } else {
+          decElRef.value.classList.add("show");
+        }
+      });
+    }
+  }); //監聽滾動事件
   window.addEventListener("resize", function () {
     windowWidth.value = window.innerWidth;
   });
@@ -186,14 +200,12 @@ watchEffect(() => {
                 CHT Design Center Internship program 2023
               </div>
               <div class="sub-title">一起成為未來造夢師</div>
-              <div class="btn">
-                <a
-                  href="https://forms.gle/FQtiLn7qntmVTHuQA"
-                  target="_blank"
-                  class="apply"
-                  ><span>立即投遞</span></a
-                >
-              </div>
+              <a
+                href="https://forms.gle/FQtiLn7qntmVTHuQA"
+                target="_blank"
+                class="button apply"
+                >立即投遞 <i class="fa-solid fa-arrow-right"></i
+              ></a>
             </div>
           </div>
         </div>
@@ -358,14 +370,17 @@ watchEffect(() => {
         <div class="image-wall">
           <div class="image-group flex">
             <div class="left">
-              <img src="./assets/images/en_group_1.JPG" alt="" />
+              <img src="./assets/images/en_group_1.jpg" alt="" />
             </div>
             <div class="right">
               <div class="right-top flex">
+                <div ref="decElRef" class="dec-1">
+                  <img src="./assets/images/en_dec_1.png" alt="" />
+                </div>
                 <div class="right-top-left">
                   <img src="./assets/images/en_group_3.jpg" alt="" />
                 </div>
-                <div class="right-top-right">
+                <div class="right-top-right relative">
                   <img src="./assets/images/en_group_4.png" alt="" />
                 </div>
               </div>
@@ -396,7 +411,7 @@ watchEffect(() => {
         </div>
       </div>
       <div class="haloBallBg haloBall_1"></div>
-      <div class="dec">
+      <div class="dec-2">
         <img src="./assets/images/en-dec_2.png" alt="" />
       </div>
     </section>
@@ -599,7 +614,7 @@ header {
 }
 // environment
 #section2 {
-  .dec {
+  .dec-2 {
     position: absolute;
     left: 0;
     bottom: 108px;
@@ -613,6 +628,7 @@ header {
   .image-wall {
     margin-top: 52px;
     position: relative;
+
     .image-group {
       height: 600px;
       img {
@@ -632,6 +648,7 @@ header {
         flex: 1 1 auto;
         height: 100%;
         width: 55%;
+
         .right-top {
           height: calc((100% - 30px) * 0.4);
           margin-bottom: 30px;
@@ -640,13 +657,27 @@ header {
             overflow: hidden;
             border-radius: 40px;
           }
+          .dec-1 {
+            position: absolute;
+            right: 0;
+            top: -225px;
+            z-index: -1;
+            transform: translateY(225px);
+            transition: transform 0.4s ease;
+            img {
+              width: 250px;
+            }
+            &.show {
+              transform: translateY(0);
+            }
+          }
           .right-top-left {
             width: 10%;
             margin-right: 30px;
           }
           .right-top-right {
             img {
-              object-fit: fill;
+              // object-fit: fill;
             }
           }
         }
@@ -715,7 +746,7 @@ header {
     height: 30vh;
     right: 0px;
     top: 150px;
-    z-index: -1;
+    z-index: -2;
   }
 }
 // job explain
@@ -838,6 +869,46 @@ header {
   }
   #section2 {
     .image-wall {
+      .image-group {
+        height: auto;
+        flex-direction: column-reverse;
+
+        .left {
+          margin-top: 30px;
+          width: 100%;
+          height: 300px;
+          img {
+            object-position: 50% 65%;
+          }
+        }
+        .right {
+          width: 100%;
+          .right-top {
+            height: 300px;
+            .dec-1 {
+              top: -155px;
+              transform: translateY(155px);
+              img {
+                width: 180px;
+              }
+            }
+            .right-top-left {
+              width: 40%;
+              img {
+                object-position: 50% 60%;
+              }
+            }
+            .right-top-right {
+              width: 60%;
+            }
+          }
+          .right-bottom {
+            width: 100%;
+            height: 300px;
+          }
+        }
+      }
+
       .image-spacial {
         .tag {
           top: -45px;
